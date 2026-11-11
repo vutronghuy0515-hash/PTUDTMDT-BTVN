@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heroes of JavaScript and HTML</title>
+
+    <!-- Font Awesome: dùng cho các icon có sẵn trong HTML -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        /* Đưa padding và border vào trong kích thước phần tử */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px 0;
+            background-color: #ffffff;
+            color: #222222;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 16px;
+        }
+
+        /* i. Khung chứa lớn */
+        #root {
+            width: 960px;
+            max-width: calc(100% - 32px);
+            margin: 0 auto;
+            padding: 28px 24px 34px;
+            background-color: #cccccc;
+            font-size: 16px;
+        }
+
+        /* ii. Header */
+        .header {
+            margin: 0 0 24px;
+            font-size: 26px;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .header i {
+            margin-right: 8px;
+        }
+
+        /* iii. Description giới thiệu chung */
+        #root > .description {
+            margin: 0 20px 38px;
+            padding: 18px 24px;
+            border: 2px solid #ffffff;
+            border-radius: 12px;
+            background-color: #777777;
+            color: #ffffff;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        #root > .description i {
+            margin-right: 8px;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .remark {
+            margin: 0 0 24px;
+            font-size: 14px;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .heroes-list {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* iv. Hero-item */
+        .hero-item {
+            position: relative;
+            display: inline-block;
+            width: calc((100% - 48px) / 4);
+            min-width: 0;
+            vertical-align: top;
+        }
+
+        /* v. H2 trong Hero-item */
+        .hero-item h2 {
+            min-height: 38px;
+            margin: 0 0 18px;
+            font-size: 17px;
+            line-height: 1.25;
+            text-align: center;
+        }
+        .hero-item h2 i {
+            color: #2695CF;
+            font-size: 18px;
+            margin-right: 6px;
+        }
+
+        /* vii. Hình trong Hero-item */
+        .hero-item img {
+            position: relative;
+            z-index: 1;
+            display: block;
+            width: 100%;
+            height: 210px;
+            border: 2px solid #ffffff;
+            border-radius: 14px;
+            object-fit: cover;
+        }
+
+        /* vi. Description của từng Hero-item: đặt đè lên hình */
+        .hero-item .description {
+            position: absolute;
+            top: 52px;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            height: 142px;
+            overflow: hidden;
+            margin: 0;
+            padding: 12px 13px;
+            border: 2px solid #ffffff;
+            border-radius: 8px;
+            background-color: rgba(65, 65, 65, 0.62);
+            color: #ffffff;
+            font-size: 13px;
+            line-height: 1.45;
+            text-align: justify;
+        }
+
+        /* Responsive: màn hình vừa thì hiển thị 2 cột */
+        @media (max-width: 850px) {
+            .heroes-list {
+                flex-wrap: wrap;
+                row-gap: 28px;
+            }
+
+            .hero-item {
+                width: calc((100% - 16px) / 2);
+            }
+        }
+
+        /* Điện thoại: hiển thị 1 cột */
+        @media (max-width: 560px) {
+            body {
+                padding: 12px 0;
+            }
+
+            #root {
+                max-width: calc(100% - 20px);
+                padding: 22px 14px;
+            }
+
+            .header {
+                font-size: 21px;
+            }
+
+            #root > .description {
+                margin: 0 0 28px;
+                padding: 14px;
+            }
+
+            .heroes-list {
+                flex-direction: column;
+                gap: 28px;
+            }
+
+            .hero-item {
+                width: 100%;
+            }
+
+            .hero-item h2 {
+                min-height: 0;
+                margin-bottom: 14px;
+            }
+
+            .hero-item img {
+                height: 240px;
+            }
+
+            .hero-item .description {
+                top: 42px;
+                height: 145px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <h1 class="header">
+            <i class="fas fa-address-card"></i>
+            Heroes of JavaScript and HTML
+        </h1>
+
+        <p class="description">
+            <i class="fab fa-android"></i>
+            <strong>Heroes of JavaScript and HTML</strong> is a "Heroes of Might and Magic"-like game, but for code nerds.
+            Each hero has its unique coding abilities and based on them he can develop software applications.
+        </p>
+
+        <div class="container">
+            <p class="remark">Currently the game has only four hero types:</p>
+
+            <ul class="heroes-list">
+                <li class="hero-item">
+                    <h2><i class="fas fa-laptop-code"></i> Front-end Developer</h2>
+                    <p class="description">
+                        Being the ultra masters of JavaScript, the order of the <strong>Front-enders</strong> is known to
+                        create user interfaces, that fill the users with absolute pleasure
+                    </p>
+                    <img src="imgs/fe.png" alt="Front-end Developer">
+                </li>
+
+                <li class="hero-item">
+                    <h2><i class="fas fa-mobile-alt"></i> Mobile Developer</h2>
+                    <p class="description">
+                        The movement of the <strong>Mobile developers</strong> is brand new, yet in their short time they
+                        already manage to amaze the peoples of the worlds and beyond with create applications.
+                    </p>
+                    <img src="imgs/mobile.jpg" alt="Mobile Developer">
+                </li>
+
+                <li class="hero-item">
+                    <h2><i class="fas fa-globe"></i> Web Developer</h2>
+                    <p class="description">
+                        The sect of the <strong>Web developers</strong> is the oldest there is. They prefer the old ways and rarely move to modern stuff. The Old Religion gives them power of small gods.
+                    </p>
+                    <img src="imgs/web.jpg" alt="Web Developer">
+                </li>
+
+                <li class="hero-item">
+                    <h2><i class="fas fa-search"></i> QA Engineer</h2>
+                    <p class="description">
+                        The <strong>QAs</strong> are the desiders of fates! They always have the final word, and all gods and mortals are bound to obey them.
+                    </p>
+                    <img src="imgs/qa.jpg" alt="QA Engineer">
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

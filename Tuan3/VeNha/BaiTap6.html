@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333333;
+        }
+
+        .portfolio {
+            max-width: 1020px;
+            margin: 36px auto;
+            padding: 0 16px;
+        }
+
+        .portfolio h2 {
+            margin: 0;
+            padding: 25px 0 12px;
+            background-color: #F8F8F8;
+            text-align: center;
+            font-size: 26px;
+        }
+
+        .portfolio h2::after {
+            content: "";
+            display: block;
+            width: 65px;
+            height: 2px;
+            margin: 13px auto 0;
+            background-color: #49C6C6;
+        }
+
+        .list-tab {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+
+            list-style: none;
+            padding: 18px 10px 26px;
+            margin: 0;
+            background-color: #F8F8F8;
+        }
+
+        .list-tab a {
+            color: #444444;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        .list-tab li:first-child a,
+        .list-tab a:hover {
+            color: #37AAAA;
+        }
+
+        .galerry {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+
+            list-style: none;
+            padding: 0;
+            margin: 12px 0;
+        }
+
+        .galerry li {
+            background-color: #9CCB7B;
+            min-width: 0;
+        }
+
+        .galerry a {
+            display: block;
+        }
+
+        .galerry img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 350 / 260;
+            object-fit: cover;
+        }
+
+        .galerry a {
+            display: block;
+            text-decoration: none;
+        }
+
+        @media (max-width: 650px) {
+            .galerry {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 420px) {
+            .galerry {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="portfolio">
+
+        <h2>MY PORTFOLIO</h2>
+
+        <ul class="list-tab">
+            <li><a href="./">All</a></li>
+            <li><a href="./">Web App</a></li>
+            <li><a href="./">UI/UX</a></li>
+            <li><a href="./">Graphics Design</a></li>
+            <li><a href="./">Mobile App</a></li>
+            <li><a href="./">Branding</a></li>
+            <li><a href="./">Marketing</a></li>
+        </ul>
+
+        <ul class="galerry">
+
+            <li><a href="./">
+                <img src="https://hocwebchuan.com/exercises/images/img_350x260.png" alt="Project 1">
+            </a></li>
+
+            <li><a href="./">
+                <img src="https://hocwebchuan.com/exercises/images/img_350x260.png" alt="Project 2">
+            </a></li>
+
+            <li><a href="./">
+                <img src="https://hocwebchuan.com/exercises/images/img_350x260.png" alt="Project 3">
+            </a></li>
+
+            <li><a href="./">
+                <img src="https://hocwebchuan.com/exercises/images/img_350x260.png" alt="Project 4">
+            </a></li>
+
+            <li><a href="./">
+                <img src="https://hocwebchuan.com/exercises/images/img_350x260.png" alt="Project 5">
+            </a></li>
+
+            <li><a href="./">
+                <img src="https://hocwebchuan.com/exercises/images/img_350x260.png" alt="Project 6">
+            </a></li>
+
+            <li><a href="./">
+                <img src="https://hocwebchuan.com/exercises/images/img_350x260.png" alt="Project 7">
+            </a></li>
+
+            <li><a href="./">
+                <img src="https://hocwebchuan.com/exercises/images/img_350x260.png" alt="Project 8">
+            </a></li>
+
+            <li><a href="./">
+                <img src="https://hocwebchuan.com/exercises/images/img_350x260.png" alt="Project 9">
+            </a></li>
+
+        </ul>
+
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập CSS 7 - Wrapper Layout</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 50px;
+            font-family: Arial, sans-serif;
+        }
+
+        #wrapper {
+            position: relative;
+            display: grid;
+
+            width: 330px;
+            padding: 8px;
+            border: 3px solid #202020;
+
+            box-shadow: -7px 7px 10px #B8B8B8;
+
+            grid-template-columns: 60px 1fr;
+
+            grid-template-rows: 50px 250px 43px;
+
+            grid-template-areas:
+                "header header"
+                "nav main"
+                "footer footer";
+
+            gap: 5px;
+        }
+
+        #wrapper::before {
+            content: "wrapper";
+            position: absolute;
+            top: -25px;
+            left: 8px;
+        }
+
+        #wrapper > * {
+            border: 2px solid #202020;
+            padding: 5px;
+        }
+
+        header {
+            grid-area: header;
+        }
+
+        nav {
+            grid-area: nav;
+        }
+
+        main {
+            grid-area: main;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+
+        header::before {
+            content: "header";
+        }
+
+        nav::before {
+            content: "nav";
+        }
+
+        main::before {
+            content: "main";
+        }
+
+        footer::before {
+            content: "footer";
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <header></header>
+
+        <nav></nav>
+
+        <main></main>
+
+        <footer></footer>
+
+    </div>
+
+</body>
+</html>
